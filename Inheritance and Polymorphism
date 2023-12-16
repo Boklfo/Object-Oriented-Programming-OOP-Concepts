@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+// Base class
+class Animal {
+public:
+    virtual void sound() {
+        std::cout << "Animal makes a sound." << std::endl;
+    }
+};
+
+// Derived class
+class Dog : public Animal {
+public:
+    void sound() override {
+        std::cout << "Dog barks." << std::endl;
+    }
+};
+
+int main() {
+    Animal* animalPtr;
+    Dog dog;
+
+    animalPtr = &dog;
+
+    // Call derived class method using base class pointer
+    animalPtr->sound();
+
+    return 0;
+}
